@@ -128,6 +128,12 @@ const configs = (function () {
 		"!atask",
 	];
 
+	// Sidequest commands - please add commands in the exact format
+	const sidequestTaskCommands = [
+		"!sidequest",
+		"!sq",
+	];
+
 	// Delete task commands - please add commands in the exact format
 	const deleteTaskCommands = [
 		"!remove",
@@ -219,6 +225,7 @@ const configs = (function () {
 	const noTaskAdded =
 		"Looks like you already have a task up there {user}, use !check to check your last task!";
 	const noTaskContent = "Try using !add the-task-you-are-working-on {user}";
+	const noSidequestContent = "Try using !sidequest the-task-you-are-working-on {user}";
 	const noTaskToEdit = "No task to edit {user}";
 	const taskEdited = 'Task edited to "{task}" {user}';
 	const taskDeleted = 'Task "{task}" has been deleted, {user}';
@@ -226,6 +233,8 @@ const configs = (function () {
 		"Good job on finishing the task '{oldTask}'! Now moving onto '{newTask}', {user}!";
 	const adminDeleteTasks = "All of the user's tasks have been deleted";
 	const taskFinished = 'Good job on finishing "{task}" {user}!';
+	const sidequestFinished = 'Congratulations on finishing your sidequest "{task}" {user}!';
+	const sidequestNoTask = 'Congratulations on finishing your sidequest "{task}" {user}! You don\'t currently appear to have a main quest to follow, try adding one with !add my-task'
 	const taskCheck = '{user} your current task is: "{task}"';
 	const taskCheckUser = `{user} {user2}'s current task is: "{task}"`;
 	const noTask = "Looks like you don't have a task up there {user}";
@@ -325,6 +334,7 @@ const configs = (function () {
 		deleteTaskCommands,
 		editTaskCommands,
 		finishTaskCommands,
+		sidequestTaskCommands,
 		nextTaskCommands,
 		helpCommands,
 		checkCommands,
@@ -338,10 +348,13 @@ const configs = (function () {
 		taskAdded,
 		noTaskAdded,
 		noTaskContent,
+		noSidequestContent,
 		taskDeleted,
 		taskEdited,
 		noTaskToEdit,
 		taskFinished,
+		sidequestFinished,
+		sidequestNoTask,
 		taskNext,
 		taskCheck,
 		taskCheckUser,
