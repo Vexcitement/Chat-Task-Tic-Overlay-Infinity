@@ -43,7 +43,7 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
 			addTask(user, extra.userColor, currentTask);
 			respond(responseTemplates.sidequestFinished, user, message);
 		}
-	}else if (commands.addTaskCommands.includes(command)) {
+	} else if (commands.addTaskCommands.includes(command)) {
 		// ADD TASK
 
 		if (message === "") {
