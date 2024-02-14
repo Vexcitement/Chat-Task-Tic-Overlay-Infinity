@@ -24,6 +24,25 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
 		}
 		cleardone();
 		respond(responseTemplates.clearedDone, user);
+	} else if (commands.sidequestTaskCommands.includes(command)) {
+		// SIDEQUEST TASK
+
+		if (message === "") {
+			// check if message is empty
+			return respond(responseTemplates.noSidequestContent, user);
+		}
+
+		if (!userHasTask(user)) {
+			addTask(user, extra.userColor, message);
+			removeTask(user);
+			return respond(responseTemplates.sidequestNoTask, user, message)
+		}else {
+			let currentTask = removeTask(user);
+			addTask(user, extra.userColor, message);
+			removeTask(user);
+			addTask(user, extra.userColor, currentTask);
+			respond(responseTemplates.sidequestFinished, user, message);
+		}
 	} else if (commands.addTaskCommands.includes(command)) {
 		// ADD TASK
 
